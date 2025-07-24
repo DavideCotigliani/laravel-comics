@@ -9,13 +9,20 @@
     <div class="container">
         <div class="row">
             @foreach ($comics as $comic)
-            <div class="col">
-                <ul>
-                    <li>{{$comic["title"]}}</li>
-                    <li>   {{$comic["description"]}}</li>
-                    <li>{{$comic["price"]}}</li>
-
-                </ul>
+            <div class="col-2">
+                <div class="card mt-3">
+                    <div class="card-title">
+                        {{$comic["title"]}}
+                    </div>
+                    <card-img>
+                        <img src="{{$comic["thumb"]}}" alt="" class="img-fluid">
+                    </card-img>
+                    <card-body>
+                          {{$comic["series"]}}
+                          {{$comic["sale_date"]}}
+                        {{$comic["price"]}}
+                    </card-body>
+                </div>
             </div>
             @endforeach
         </div>
